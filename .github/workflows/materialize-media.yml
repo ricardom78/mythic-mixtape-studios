@@ -1,0 +1,53 @@
+name: Materialize media assets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "**/*.b64.*"
+      - ".github/workflows/materialize-media.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Concatenate chunks, decode, commit binaries
+        run: |
+          set -euo pipefail
+          python3 << 'PY'
+          import os, base64, glob, subprocess
+          groups = {}
+          for p in glob.glob("**/*.b64.*", recursive=True):
+              if ".b64." not in p:
+                  continue
+              base, _, idx = p.rpartition(".b64.")
+              if not idx.isdigit():
+                  continue
+              groups.setdefault(base, []).append((int(idx), p))
+          changed = False
+          for dest, parts in sorted(groups.items()):
+              parts.sort()
+              data = "".join(open(p, encoding="ascii").read().strip() for _, p in parts)
+              raw = base64.b64decode(data)
+              os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
+              open(dest, "wb").write(raw)
+              print(f"wrote {dest} ({len(raw)} bytes) from {len(parts)} chunks")
+              for _, p in parts:
+                  os.remove(p)
+              changed = True
+          if not changed:
+              print("nothing to materialize")
+              raise SystemExit(0)
+          subprocess.check_call(["git", "config", "user.name", "github-actions[bot]"])
+          subprocess.check_call(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"])
+          subprocess.check_call(["git", "add", "-A"])
+          st = subprocess.run(["git", "diff", "--cached", "--quiet"])
+          if st.returncode == 0:
+              print("no git changes")
+              raise SystemExit(0)
+          subprocess.check_call(["git", "commit", "-m", "Materialize binary media assets from base64 chunks"])
+          subprocess.check_call(["git", "push"])
+          PY
