@@ -1,0 +1,37 @@
+; Engine configuration file.
+; Godot 4.x — Ashbound Episode 1 vertical slice
+
+config_version=5
+
+[application]
+
+config/name="Ashbound"
+config/description="Episode 1 vertical slice — Hold Greyfen, the night the lord falls."
+config/version="0.1.0"
+run/main_scene="res://scenes/title.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=405
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.06, 0.07, 0.1, 1)
