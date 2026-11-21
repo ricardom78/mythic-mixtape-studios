@@ -1,10 +1,6 @@
 name: Materialize media assets
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "**/*.b64.*"
-      - ".github/workflows/materialize-media.yml"
 
 permissions:
   contents: write
@@ -30,6 +26,11 @@ jobs:
           changed = False
           for dest, parts in sorted(groups.items()):
               parts.sort()
+              idxs = [i for i, _ in parts]
+              expected = list(range(idxs[0], idxs[-1] + 1))
+              if idxs != expected or idxs[0] != 0:
+                  print(f"SKIP incomplete set for {dest}: have {idxs}")
+                  continue
               data = "".join(open(p, encoding="ascii").read().strip() for _, p in parts)
               raw = base64.b64decode(data)
               os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
