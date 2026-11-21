@@ -1,6 +1,10 @@
 name: Materialize media assets
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/media-manifest.json"
+      - ".github/workflows/materialize-media.yml"
 
 permissions:
   contents: write
@@ -10,38 +14,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Concatenate chunks, decode, commit binaries
+      - name: Download media from staged URLs and commit
         run: |
           set -euo pipefail
           python3 << 'PY'
-          import os, base64, glob, subprocess
-          groups = {}
+          import json, os, hashlib, urllib.request, subprocess, glob
+
           for p in glob.glob("**/*.b64.*", recursive=True):
-              if ".b64." not in p:
-                  continue
-              base, _, idx = p.rpartition(".b64.")
-              if not idx.isdigit():
-                  continue
-              groups.setdefault(base, []).append((int(idx), p))
-          changed = False
-          for dest, parts in sorted(groups.items()):
-              parts.sort()
-              idxs = [i for i, _ in parts]
-              expected = list(range(idxs[0], idxs[-1] + 1))
-              if idxs != expected or idxs[0] != 0:
-                  print(f"SKIP incomplete set for {dest}: have {idxs}")
-                  continue
-              data = "".join(open(p, encoding="ascii").read().strip() for _, p in parts)
-              raw = base64.b64decode(data)
-              os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
-              open(dest, "wb").write(raw)
-              print(f"wrote {dest} ({len(raw)} bytes) from {len(parts)} chunks")
-              for _, p in parts:
+              os.remove(p)
+              print("removed", p)
+          for p in [
+              "public/.verify-mcp-roundtrip.txt",
+              "public/.b64-test.bin",
+              "public/.binary-smoke.jpg",
+              "public/.latin1-test.bin",
+              "public/.mini-test.jpg.b64",
+              "public/.upload-smoke.txt",
+          ]:
+              if os.path.exists(p):
                   os.remove(p)
-              changed = True
-          if not changed:
-              print("nothing to materialize")
-              raise SystemExit(0)
+                  print("removed", p)
+
+          manifest = json.load(open("scripts/media-manifest.json"))
+          for dest, meta in sorted(manifest.items()):
+              url = meta["url"]
+              expected_md5 = meta["md5"]
+              expected_size = meta["size"]
+              print(f"fetch {dest} from {url}")
+              req = urllib.request.Request(url, headers={"User-Agent": "mythic-mixtape-materialize"})
+              with urllib.request.urlopen(req, timeout=180) as r:
+                  data = r.read()
+              md5 = hashlib.md5(data).hexdigest()
+              if md5 != expected_md5 or len(data) != expected_size:
+                  raise SystemExit(
+                      f"hash/size mismatch for {dest}: got {len(data)}/{md5} want {expected_size}/{expected_md5}"
+                  )
+              os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
+              open(dest, "wb").write(data)
+              print(f"wrote {dest} ({len(data)} bytes)")
+
+          if os.path.exists("scripts/media-manifest.json"):
+              os.remove("scripts/media-manifest.json")
+
           subprocess.check_call(["git", "config", "user.name", "github-actions[bot]"])
           subprocess.check_call(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"])
           subprocess.check_call(["git", "add", "-A"])
@@ -49,6 +63,6 @@ jobs:
           if st.returncode == 0:
               print("no git changes")
               raise SystemExit(0)
-          subprocess.check_call(["git", "commit", "-m", "Materialize binary media assets from base64 chunks"])
+          subprocess.check_call(["git", "commit", "-m", "Materialize binary media assets"])
           subprocess.check_call(["git", "push"])
           PY
