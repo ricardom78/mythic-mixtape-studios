@@ -1,0 +1,122 @@
+[gd_scene load_steps=2 format=3 uid="uid://ashbounddialogue01"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_runner.gd" id="1_runner"]
+
+[node name="DialogueScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_runner")
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.14, 0.1, 0.09, 1)
+
+[node name="Atmosphere" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 280.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.28)
+
+[node name="SceneLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 36.0
+offset_right = -32.0
+offset_bottom = 72.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.75, 0.68, 0.55, 1)
+theme_override_font_sizes/font_size = 18
+text = "Great Hall"
+horizontal_alignment = 1
+
+[node name="TapArea" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="BottomUI" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -560.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 24
+
+[node name="Panel" type="PanelContainer" parent="BottomUI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InnerMargin" type="MarginContainer" parent="BottomUI/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="BottomUI/Panel/InnerMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SpeakerLabel" type="Label" parent="BottomUI/Panel/InnerMargin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.78, 0.55, 1)
+theme_override_font_sizes/font_size = 26
+text = "Narrator"
+
+[node name="BodyLabel" type="RichTextLabel" parent="BottomUI/Panel/InnerMargin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.9, 0.88, 0.84, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "…"
+fit_content = false
+scroll_active = true
+
+[node name="ChoicesBox" type="VBoxContainer" parent="BottomUI/Panel/InnerMargin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="AdvanceHint" type="Label" parent="BottomUI/Panel/InnerMargin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.48, 0.44, 1)
+theme_override_font_sizes/font_size = 16
+text = "Tap to continue"
+horizontal_alignment = 2

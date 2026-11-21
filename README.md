@@ -14,3 +14,7 @@ Open http://localhost:3000
 ## Content
 
 Edit `data/content.ts` for studio copy, videos, and Games/Songs placeholders.
+
+## Games
+
+- **Ashbound** (Godot 4 Episode 1 vertical slice) — see [`ashbound/README.md`](ashbound/README.md). Open `ashbound/project.godot` in Godot 4.3+.

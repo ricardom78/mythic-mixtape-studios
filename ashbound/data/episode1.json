@@ -1,0 +1,228 @@
+{
+  "id": "episode1",
+  "title": "Ashbound — Episode 1",
+  "subtitle": "Hold Greyfen",
+  "start": "supper_01",
+  "nodes": {
+    "supper_01": {
+      "speaker": "Narrator",
+      "text": "Hold Greyfen. Midwinter. The great hall smells of salt-broth and wet wool. Torches spit against the fog that crawls in under the doors.",
+      "background": "hall",
+      "next": "supper_02"
+    },
+    "supper_02": {
+      "speaker": "Kael",
+      "text": "I stand where a sworn messenger stands: near the door, satchel on my hip, listening for a name that needs a letter more than a blade.",
+      "background": "hall",
+      "next": "supper_03"
+    },
+    "supper_03": {
+      "speaker": "Lord Greyfen",
+      "text": "…and if the inland crowns want our road, they can buy the salt like honest thieves.",
+      "background": "hall",
+      "next": "supper_04"
+    },
+    "supper_04": {
+      "speaker": "Narrator",
+      "text": "Laughter. Then Lord Greyfen’s cup hits the table wrong. His hand finds his throat. The hall goes quiet in pieces.",
+      "background": "hall",
+      "next": "supper_05"
+    },
+    "supper_05": {
+      "speaker": "Steward Maelis",
+      "text": "Poison. Not fever. Seal the gates. No one leaves. Get the heir to the solar—now.",
+      "background": "hall",
+      "next": "supper_06"
+    },
+    "supper_06": {
+      "speaker": "Captain Veyra",
+      "text": "Seal us in with whoever poured that cup? I want riders on the cliff road before the fog thickens.",
+      "background": "hall",
+      "next": "supper_07"
+    },
+    "supper_07": {
+      "speaker": "Narrator",
+      "text": "Lord Greyfen does not rise. Someone screams for a healer who will not matter. The steward’s eyes find mine.",
+      "background": "hall",
+      "next": "corridor_01"
+    },
+    "corridor_01": {
+      "speaker": "Narrator",
+      "text": "Torchlight in the corridor. Cold stone. The heir—Lira Greyfen—is pale but upright. The steward and captain argue over her head like weather.",
+      "background": "corridor",
+      "next": "corridor_02"
+    },
+    "corridor_02": {
+      "speaker": "Steward Maelis",
+      "text": "Messenger. You heard the order. The heir stays locked until dawn. You run my seals—nothing else.",
+      "background": "corridor",
+      "next": "corridor_03"
+    },
+    "corridor_03": {
+      "speaker": "Captain Veyra",
+      "text": "Or you open a gate and we find who paid for this night. Standing still is how holds die.",
+      "background": "corridor",
+      "next": "corridor_04"
+    },
+    "corridor_04": {
+      "speaker": "Lira",
+      "text": "Kael. Father trusted you with things he wouldn’t put in a steward’s ledger. Don’t let them talk as if I’m already a seal on a door.",
+      "background": "corridor",
+      "next": "corridor_choice"
+    },
+    "corridor_choice": {
+      "speaker": "Kael",
+      "text": "The hall is still shouting. My satchel feels heavier than it should.",
+      "background": "corridor",
+      "choices": [
+        {
+          "id": "side_heir_soft",
+          "text": "\"I'll stay with Lira until the solar's secured.\"",
+          "next": "letter_01"
+        },
+        {
+          "id": "side_steward_soft",
+          "text": "\"I'll follow the steward's seals. For now.\"",
+          "next": "letter_01"
+        },
+        {
+          "id": "side_pragmatic",
+          "text": "\"First I check what I was carrying tonight.\"",
+          "next": "letter_01"
+        }
+      ]
+    },
+    "letter_01": {
+      "speaker": "Narrator",
+      "text": "In the quiet outside the solar, I open my satchel for a wax-check. A letter I did not receive sits under the courier strips—Greyfen seal, but the wax is wrong.",
+      "background": "solar",
+      "next": "letter_02"
+    },
+    "letter_02": {
+      "speaker": "Narrator",
+      "text": "It is warm. Not from my body. The seal looks like ash that forgot how to cool. When my thumb brushes it, the corridor torch dips—just once—as if something else inhaled.",
+      "background": "solar",
+      "next": "letter_03"
+    },
+    "letter_03": {
+      "speaker": "Kael",
+      "text": "This was never meant for a messenger’s bag. It was planted. Or it wanted to be found.",
+      "background": "solar",
+      "next": "letter_04"
+    },
+    "letter_04": {
+      "speaker": "Steward Maelis",
+      "text": "Kael. Whatever you’ve found goes to me. Succession is a knife. Don’t hand it to a grieving child.",
+      "background": "solar",
+      "next": "letter_05"
+    },
+    "letter_05": {
+      "speaker": "Lira",
+      "text": "If it’s Father’s seal, it’s mine to open. If it isn’t—then someone already decided I shouldn’t live to ask.",
+      "background": "solar",
+      "next": "major_choice"
+    },
+    "major_choice": {
+      "speaker": "Narrator",
+      "text": "Midnight presses against the shutters. Protect the heir—or obey the steward. There is no clean third road that keeps both.",
+      "background": "solar",
+      "choices": [
+        {
+          "id": "protect_heir",
+          "text": "Give the letter to Lira. Guard her door.",
+          "flag": "protect_heir",
+          "next": "heir_01"
+        },
+        {
+          "id": "obey_steward",
+          "text": "Deliver the letter to Steward Maelis. Lock the solar.",
+          "flag": "obey_steward",
+          "next": "steward_01"
+        }
+      ]
+    },
+    "heir_01": {
+      "speaker": "Narrator",
+      "text": "Lira breaks the warm seal. For a breath the solar smells like a forge that never was. Her face hardens.",
+      "background": "solar",
+      "next": "heir_02"
+    },
+    "heir_02": {
+      "speaker": "Lira",
+      "text": "It’s a claim of wardship. Maelis would hold Greyfen “until I am fit.” Signed in a hand that isn’t Father’s—close enough to fool a hall.",
+      "background": "solar",
+      "next": "heir_03"
+    },
+    "heir_03": {
+      "speaker": "Kael",
+      "text": "Then the steward doesn’t get this night. I bar the solar. Captain Veyra can keep the corridor mean.",
+      "background": "solar",
+      "next": "heir_04"
+    },
+    "heir_04": {
+      "speaker": "Captain Veyra",
+      "text": "Good. I’ll put three trusted on the stair. If Maelis wants the heir, he can explain it with witnesses.",
+      "background": "corridor",
+      "next": "heir_05"
+    },
+    "heir_05": {
+      "speaker": "Narrator",
+      "text": "Dawn is still hours away. Outside the shutters, fog coils like it is listening. You chose the heir. The steward will not forget.",
+      "background": "corridor",
+      "next": "end"
+    },
+    "steward_01": {
+      "speaker": "Narrator",
+      "text": "Maelis takes the letter without thanks. The warm seal does not surprise him. That is worse than surprise.",
+      "background": "solar",
+      "next": "steward_02"
+    },
+    "steward_02": {
+      "speaker": "Steward Maelis",
+      "text": "Wise. Lock the solar. Tell Lira the healer needs quiet. Tell the captain the gates stay shut—on my authority as acting hand.",
+      "background": "solar",
+      "next": "steward_03"
+    },
+    "steward_03": {
+      "speaker": "Lira",
+      "text": "Kael—? You’re locking me in. Father said you ran truth, not cages.",
+      "background": "solar",
+      "next": "steward_04"
+    },
+    "steward_04": {
+      "speaker": "Kael",
+      "text": "I’m keeping you alive until morning. That’s the oath I can still keep.",
+      "background": "solar",
+      "next": "steward_05"
+    },
+    "steward_05": {
+      "speaker": "Narrator",
+      "text": "The bar drops. Somewhere in the keep, a seal is pressed into soft wax that should have cooled. You obeyed the steward. The heir will remember the sound of the lock.",
+      "background": "corridor",
+      "next": "end"
+    },
+    "end": {
+      "speaker": "Narrator",
+      "text": "Episode 1 complete.",
+      "background": "end",
+      "ending": true
+    }
+  },
+  "endings": {
+    "protect_heir": {
+      "title": "The Heir’s Watch",
+      "body": "You gave Lira the planted letter and stood her door. Steward Maelis lost the night—and gained a reason. Hold Greyfen wakes to a contested succession and a messenger who chose blood over seals.",
+      "tease": "Next: the inland crowns smell weakness. Something in the wax still won’t cool."
+    },
+    "obey_steward": {
+      "title": "The Steward’s Seal",
+      "body": "You delivered the letter and locked the solar. Maelis holds the claim; Lira holds the wound. Hold Greyfen is quiet until dawn—and quieter is not safer.",
+      "tease": "Next: a sealed wardship travels faster than grief. The warm wax has more names."
+    },
+    "none": {
+      "title": "Unfinished Road",
+      "body": "The night did not resolve. Reload and choose.",
+      "tease": ""
+    }
+  }
+}

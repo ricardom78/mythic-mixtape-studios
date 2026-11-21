@@ -1,0 +1,10 @@
+.godot/
+*.translation
+export.cfg
+*.apk
+*.aab
+*.so
+*.jar
+build/
+.import/
+*.tmp
