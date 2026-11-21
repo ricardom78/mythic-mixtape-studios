@@ -16,7 +16,7 @@ export function Hero() {
         <div
           className="absolute inset-0 scale-110 bg-cover bg-center opacity-[0.32] blur-[1.5px]"
           style={{
-            backgroundImage: "url(/banner-ref.png)",
+            backgroundImage: "url(/banner-ref.jpg)",
             maskImage:
               "linear-gradient(180deg, black 0%, black 50%, transparent 92%)",
             WebkitMaskImage:
