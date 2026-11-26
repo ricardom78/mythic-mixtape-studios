@@ -61,9 +61,9 @@ export function VideosBrowse() {
   return (
     <section
       id="videos"
-      className="relative z-10 mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-12 sm:px-10 sm:py-16"
+      className="relative z-10 mx-auto w-full max-w-6xl scroll-mt-20 px-4 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16"
     >
-      <div className="mb-6 border-b border-[rgba(255,255,255,0.08)]">
+      <div className="mb-5 border-b border-[rgba(255,255,255,0.08)] sm:mb-6">
         <div className="flex items-end gap-8">
           <div className="border-b-2 border-white pb-3">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-bold tracking-[0.08em] text-white sm:text-xl">
@@ -77,7 +77,7 @@ export function VideosBrowse() {
       </div>
 
       <div
-        className="mb-8 flex flex-wrap gap-2"
+        className="-mx-4 mb-7 flex gap-2 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:mb-8 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
         role="tablist"
         aria-label="Video sort"
       >
@@ -92,8 +92,8 @@ export function VideosBrowse() {
               onClick={() => setActive(filter)}
               className={
                 isActive
-                  ? "rounded-full bg-[var(--chrome)] px-4 py-1.5 text-sm font-semibold text-[var(--bg-void)]"
-                  : "rounded-full bg-[rgba(255,255,255,0.08)] px-4 py-1.5 text-sm font-semibold text-[var(--text)] transition hover:bg-[rgba(255,255,255,0.14)]"
+                  ? "shrink-0 rounded-full bg-[var(--chrome)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-void)]"
+                  : "shrink-0 rounded-full bg-[rgba(255,255,255,0.08)] px-4 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:bg-[rgba(255,255,255,0.14)]"
               }
             >
               {filter}
@@ -102,7 +102,7 @@ export function VideosBrowse() {
         })}
       </div>
 
-      <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
         {videos.map((item) => (
           <VideoCard key={item.id} item={item} />
         ))}

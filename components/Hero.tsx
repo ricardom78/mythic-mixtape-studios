@@ -29,9 +29,9 @@ export function Hero() {
         <div className="absolute bottom-[12%] left-1/2 h-40 w-[70%] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(0,240,255,0.18),transparent_70%)] blur-xl" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 pb-12 pt-4 sm:px-10">
-        <div className="reveal mb-5 flex items-center gap-3">
-          <span className="relative h-12 w-12 overflow-hidden rounded-full bg-black shadow-[0_0_20px_rgba(255,43,214,0.5)] sm:h-14 sm:w-14">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-4 pb-10 pt-2 sm:px-10 sm:pb-12 sm:pt-4">
+        <div className="reveal mb-4 flex items-center gap-3 sm:mb-5">
+          <span className="relative h-14 w-14 overflow-hidden rounded-full bg-black shadow-[0_0_20px_rgba(255,43,214,0.5)] sm:h-14 sm:w-14">
             <Image
               src={studio.logoSrc}
               alt=""
@@ -41,30 +41,36 @@ export function Hero() {
               priority
             />
           </span>
-          <p className="font-[family-name:var(--font-display)] text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[var(--cyan)]">
+          <p className="font-[family-name:var(--font-display)] text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--cyan)] sm:tracking-[0.35em]">
             Portfolio
           </p>
         </div>
 
-        <h1 className="reveal reveal-delay-1 max-w-[18ch] text-[clamp(2.2rem,7.2vw,4.4rem)] leading-[0.95] sm:max-w-none">
+        <h1 className="reveal reveal-delay-1 max-w-[14ch] text-[clamp(1.85rem,8.2vw,4.4rem)] leading-[1.02] sm:max-w-none sm:leading-[0.95]">
           <span className="chrome-text chrome-text-glow">
             {studio.displayName}
           </span>
         </h1>
 
-        <div className="reveal reveal-delay-2 mt-5">
+        <div className="reveal reveal-delay-2 mt-4 sm:mt-5">
           <Waveform />
         </div>
 
-        <p className="reveal reveal-delay-2 mt-5 max-w-md text-lg leading-snug text-[var(--text-muted)] sm:text-xl">
+        <p className="reveal reveal-delay-2 mt-4 max-w-md text-base leading-snug text-[var(--text-muted)] sm:mt-5 sm:text-xl">
           {studio.tagline}
         </p>
 
-        <div className="reveal reveal-delay-3 mt-9 flex flex-wrap gap-4">
-          <a href={studio.ctaPrimary.href} className="btn-primary">
+        <div className="reveal reveal-delay-3 mt-7 flex w-full flex-col gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+          <a
+            href={studio.ctaPrimary.href}
+            className="btn-primary w-full text-center sm:w-auto"
+          >
             {studio.ctaPrimary.label}
           </a>
-          <a href={studio.ctaSecondary.href} className="btn-ghost">
+          <a
+            href={studio.ctaSecondary.href}
+            className="btn-ghost w-full text-center sm:w-auto"
+          >
             {studio.ctaSecondary.label}
           </a>
         </div>
