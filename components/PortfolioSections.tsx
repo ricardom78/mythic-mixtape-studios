@@ -6,12 +6,12 @@ function accentClass(accent: PortfolioSection["accent"]) {
 
 export function PortfolioSections() {
   return (
-    <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-4 sm:px-10">
+    <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-4 sm:px-10">
       {sections.map((section) => (
         <section
           key={section.id}
           id={section.id}
-          className={`${accentClass(section.accent)} scroll-mt-24 py-14 sm:py-16`}
+          className={`${accentClass(section.accent)} scroll-mt-20 py-10 sm:scroll-mt-24 sm:py-16`}
         >
           <div
             className="mb-7 flex flex-col gap-2 border-b pb-5"
@@ -69,12 +69,14 @@ export function PortfolioSections() {
                       href={item.href}
                       target={external ? "_blank" : undefined}
                       rel={external ? "noopener noreferrer" : undefined}
-                      className="item-row block px-4 py-5 no-underline transition hover:bg-[rgba(255,255,255,0.03)]"
+                      className="item-row block px-3 py-4 no-underline transition hover:bg-[rgba(255,255,255,0.03)] active:bg-[rgba(255,255,255,0.05)] sm:px-4 sm:py-5"
                     >
                       {body}
                     </a>
                   ) : (
-                    <div className="item-row px-4 py-5">{body}</div>
+                    <div className="item-row px-3 py-4 sm:px-4 sm:py-5">
+                      {body}
+                    </div>
                   )}
                 </li>
               );

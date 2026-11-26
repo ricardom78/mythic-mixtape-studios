@@ -2,20 +2,20 @@ import { studio } from "@/data/content";
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 border-t border-[rgba(0,240,255,0.12)] px-5 py-10 sm:px-10">
-      <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="relative z-10 border-t border-[rgba(0,240,255,0.12)] px-4 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-10 sm:py-10">
+      <div className="mx-auto flex max-w-5xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
         <p className="font-[family-name:var(--font-display)] text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--chrome-mid)]">
           {studio.displayName}
         </p>
-        <p className="text-sm text-[var(--text-muted)]">
+        <p className="flex flex-col gap-1 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center">
           <a
             href={`mailto:${studio.email}`}
-            className="text-[var(--cyan)] no-underline hover:underline"
+            className="break-all text-[var(--cyan)] no-underline hover:underline"
           >
             {studio.email}
           </a>
-          <span className="mx-2 text-[var(--chrome-mid)]">·</span>
-          Merch coming later
+          <span className="hidden text-[var(--chrome-mid)] sm:inline">·</span>
+          <span>Merch coming later</span>
         </p>
       </div>
     </footer>
