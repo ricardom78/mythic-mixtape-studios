@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
         source: "/games/:slug.jpg",
         destination: "/api/game-art/:slug",
       },
+      {
+        source: "/playlists/:slug.jpg",
+        destination: "/api/playlist-art/:slug",
+      },
     ];
   },
 };
