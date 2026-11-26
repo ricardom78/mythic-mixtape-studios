@@ -8,8 +8,14 @@ export function SiteFooter() {
           {studio.displayName}
         </p>
         <p className="text-sm text-[var(--text-muted)]">
-          Starter portfolio · content lives in{" "}
-          <code className="text-[var(--cyan)]">data/content.ts</code>
+          <a
+            href={`mailto:${studio.email}`}
+            className="text-[var(--cyan)] no-underline hover:underline"
+          >
+            {studio.email}
+          </a>
+          <span className="mx-2 text-[var(--chrome-mid)]">·</span>
+          Merch coming later
         </p>
       </div>
     </footer>

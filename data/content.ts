@@ -8,11 +8,18 @@ export const studio = {
   displayName: "Mythic Mixtape Studios™",
   handle: "@MythicMixtapeStudios",
   shortName: "MMS",
-  tagline: "Games. Videos. Songs. Built in the neon.",
+  tagline: "Enter the world of imagination.",
+  philosophy:
+    "Build the foundation now. Populate and expand it gradually as the studio's creative assets are organized and approved.",
   blurb:
-    "Mythic Mixtape Studios™ makes games, videos, and music with a synthwave pulse — fairy-tale sci-fi, late-night neon, and mythic multiverse lore.",
+    "Mythic Mixtape Studios™ is an independent creative media and digital entertainment studio developing original music, cinematic productions, fictional universes, interactive games, digital publications and multimedia experiences.",
+  blurbSecondary:
+    "Blending imagination, storytelling, emerging technology and distinctive visual artistry, the studio creates interconnected worlds that transcend traditional entertainment formats.",
+  email: "mythicmixtapestudios@gmail.com",
   logoSrc: "/channel-logo.png",
   youtubeUrl: "https://www.youtube.com/@MythicMixtapeStudios",
+  /** Future: Shopify merch store — link or embed when ready; keep portfolio on Vercel. */
+  shopUrl: undefined as string | undefined,
   stats: { videos: "YouTube", note: "Watch on channel" },
   ctaPrimary: { label: "Browse videos", href: "#videos" },
   ctaSecondary: { label: "Playlists", href: "#playlists" },

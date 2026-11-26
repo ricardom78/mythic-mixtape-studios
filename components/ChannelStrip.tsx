@@ -8,13 +8,13 @@ export function ChannelStrip() {
       aria-label="Studio identity"
     >
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
-        <div className="relative h-[88px] w-[88px] shrink-0 sm:h-[112px] sm:w-[112px]">
+        <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full bg-black shadow-[0_0_28px_rgba(255,43,214,0.45)] sm:h-[112px] sm:w-[112px]">
           <Image
             src={studio.logoSrc}
-            alt={`${studio.displayName} logo — crowned cassette`}
+            alt={`${studio.displayName} logo`}
             fill
             sizes="112px"
-            className="rounded-full object-cover shadow-[0_0_28px_rgba(255,43,214,0.45)]"
+            className="object-contain p-[4%]"
             priority
           />
         </div>
