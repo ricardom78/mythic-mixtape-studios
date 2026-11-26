@@ -5,13 +5,13 @@ export function SiteNav() {
   return (
     <header className="relative z-20 flex items-center justify-between gap-4 px-5 py-4 sm:px-10">
       <a href="#top" className="flex items-center gap-3 no-underline">
-        <span className="relative h-9 w-9 overflow-hidden rounded-full shadow-[0_0_14px_rgba(255,43,214,0.4)]">
+        <span className="relative h-9 w-9 overflow-hidden rounded-full bg-black shadow-[0_0_14px_rgba(255,43,214,0.4)]">
           <Image
             src={studio.logoSrc}
             alt=""
             fill
             sizes="36px"
-            className="object-cover"
+            className="object-contain p-[4%]"
             priority
           />
         </span>
