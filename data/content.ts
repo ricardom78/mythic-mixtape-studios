@@ -230,6 +230,10 @@ export type GameItem = {
   href?: string;
   featured?: boolean;
   comingSoon?: boolean;
+  /** Keep face/top of poster visible when cropping */
+  thumbPosition?: "center" | "top";
+  /** Override frame shape (Jack Statik poster is square) */
+  frame?: "portrait" | "square" | "wide";
 };
 
 export const games: GameItem[] = [
@@ -251,6 +255,8 @@ export const games: GameItem[] = [
     thumb: "/games/jack-static.jpg",
     accent: "purple",
     featured: true,
+    frame: "square",
+    thumbPosition: "top",
   },
   {
     id: "game-picture-this",

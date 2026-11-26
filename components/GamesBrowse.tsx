@@ -8,11 +8,20 @@ const accentWash: Record<GameItem["accent"], string> = {
   amber: "from-[#2a1808] via-[#120c08] to-[#050308]",
 };
 
+function frameClass(item: GameItem) {
+  if (item.frame === "square") return "aspect-square";
+  if (item.frame === "wide") return "aspect-[16/9] sm:aspect-[21/9]";
+  if (item.featured) return "aspect-square sm:aspect-[16/10]";
+  return "aspect-[4/5]";
+}
+
 function GameCard({ item }: { item: GameItem }) {
+  const position =
+    item.thumbPosition === "top" ? "object-top" : "object-center";
   const body = (
     <>
       <div
-        className={`relative overflow-hidden rounded-xl ${item.featured ? "aspect-square sm:aspect-[16/10]" : "aspect-[4/5]"}`}
+        className={`relative overflow-hidden rounded-xl ${frameClass(item)}`}
       >
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentWash[item.accent]}`}
@@ -28,7 +37,7 @@ function GameCard({ item }: { item: GameItem }) {
                 ? "100vw"
                 : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
-            className="object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+            className={`object-cover ${position} transition duration-500 group-hover:scale-[1.03]`}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
