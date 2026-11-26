@@ -307,9 +307,93 @@ export type PortfolioSection = {
 
 export const sections: PortfolioSection[] = [];
 
+export type LibraryCategory = {
+  id: string;
+  title: string;
+  blurb: string;
+  icon: "book" | "audio" | "comic" | "flip" | "poetry" | "encyclopedia" | "lore" | "magazine" | "bilingual";
+  meta: string;
+};
+
+/** Publishing Division — foundation catalog (populate titles later) */
+export const library = {
+  title: "Library",
+  division: "Publishing Division",
+  intro:
+    "Dedicated to original literature, digital publications, illustrated storytelling and immersive reading and listening experiences.",
+  featuresNote:
+    "Digital reading, audiobook playback, and downloadable sales come online as titles are approved.",
+  categories: [
+    {
+      id: "lib-ebooks",
+      title: "Digital Books & eBooks",
+      blurb: "Original long-form literature for screen reading.",
+      icon: "book",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-audio",
+      title: "Audiobooks & Narrated Stories",
+      blurb: "Spoken-word and narrated studio storytelling.",
+      icon: "audio",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-comics",
+      title: "Comic Books & Graphic Novels",
+      blurb: "Illustrated sequential stories from the mythic worlds.",
+      icon: "comic",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-flip",
+      title: "Interactive Digital Flipbooks",
+      blurb: "Page-turn experiences built for the web.",
+      icon: "flip",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-poetry",
+      title: "Poetry & Short Stories",
+      blurb: "Compact literary cuts and verse from the studio.",
+      icon: "poetry",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-encyclopedia",
+      title: "Illustrated Character Encyclopedias",
+      blurb: "Profiles, art, and dossiers for the cast of characters.",
+      icon: "encyclopedia",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-lore",
+      title: "Fictional Universe Guides & Lore",
+      blurb: "Maps, timelines, and guides across the multiverse.",
+      icon: "lore",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-magazine",
+      title: "Digital Magazines & Studio Publications",
+      blurb: "Studio periodicals and special issues.",
+      icon: "magazine",
+      meta: "Coming soon",
+    },
+    {
+      id: "lib-bilingual",
+      title: "Educational & Bilingual Materials",
+      blurb: "Learning resources with ES | EN support.",
+      icon: "bilingual",
+      meta: "Coming soon",
+    },
+  ] satisfies LibraryCategory[],
+};
+
 export const navLinks = [
   { href: "#videos", label: "Videos" },
   { href: "#games", label: "Games" },
   { href: "#playlists", label: "Playlists" },
+  { href: "#library", label: "Library" },
   { href: "#about", label: "About" },
 ] as const;

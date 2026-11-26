@@ -2,6 +2,7 @@ import { About } from "@/components/About";
 import { ChannelStrip } from "@/components/ChannelStrip";
 import { GamesBrowse } from "@/components/GamesBrowse";
 import { Hero } from "@/components/Hero";
+import { LibraryBrowse } from "@/components/LibraryBrowse";
 import { PlaylistsBrowse } from "@/components/PlaylistsBrowse";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
@@ -17,6 +18,7 @@ export default function Home() {
         <VideosBrowse />
         <GamesBrowse />
         <PlaylistsBrowse />
+        <LibraryBrowse />
         <About />
       </main>
       <SiteFooter />
