@@ -31,13 +31,13 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 pb-12 pt-4 sm:px-10">
         <div className="reveal mb-5 flex items-center gap-3">
-          <span className="relative h-12 w-12 overflow-hidden rounded-full shadow-[0_0_20px_rgba(255,43,214,0.5)] sm:h-14 sm:w-14">
+          <span className="relative h-12 w-12 overflow-hidden rounded-full bg-black shadow-[0_0_20px_rgba(255,43,214,0.5)] sm:h-14 sm:w-14">
             <Image
               src={studio.logoSrc}
               alt=""
               fill
               sizes="56px"
-              className="object-cover"
+              className="object-contain p-[6%]"
               priority
             />
           </span>

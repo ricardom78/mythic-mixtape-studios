@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/channel-logo.png",
+        destination: "/api/channel-logo",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
