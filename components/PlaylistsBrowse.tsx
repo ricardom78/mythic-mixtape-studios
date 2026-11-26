@@ -15,7 +15,7 @@ function PlaylistCard({ item }: { item: PlaylistItem }) {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative block aspect-square overflow-hidden rounded-xl outline-none ring-0 transition duration-300 focus-visible:ring-2 focus-visible:ring-[var(--cyan)]"
+        className="relative block aspect-[16/9] overflow-hidden rounded-xl outline-none ring-0 transition duration-300 focus-visible:ring-2 focus-visible:ring-[var(--cyan)]"
       >
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentWash[item.accent]}`}
