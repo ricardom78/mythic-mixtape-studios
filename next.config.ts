@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         source: "/channel-logo.png",
         destination: "/api/channel-logo",
       },
+      {
+        source: "/games/:slug.jpg",
+        destination: "/api/game-art/:slug",
+      },
     ];
   },
 };

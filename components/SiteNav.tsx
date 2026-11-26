@@ -2,16 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useId, useState } from "react";
-import { sections, studio } from "@/data/content";
+import { navLinks, studio } from "@/data/content";
 
-const links = [
-  { href: "#videos", label: "Videos" },
-  ...sections.map((section) => ({
-    href: `#${section.id}`,
-    label: section.title,
-  })),
-  { href: "#about", label: "About" },
-];
+const links = [...navLinks];
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
