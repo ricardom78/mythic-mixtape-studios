@@ -22,7 +22,7 @@ export const studio = {
   shopUrl: undefined as string | undefined,
   stats: { videos: "YouTube", note: "Watch on channel" },
   ctaPrimary: { label: "Browse videos", href: "#videos" },
-  ctaSecondary: { label: "Playlists", href: "#playlists" },
+  ctaSecondary: { label: "Games", href: "#games" },
 };
 
 export type VideoItem = {
@@ -31,12 +31,10 @@ export type VideoItem = {
   meta: string;
   duration?: string;
   thumb: string;
-  /** Accent wash when thumb is loading / placeholder */
   accent: "magenta" | "cyan" | "purple" | "amber";
   href?: string;
 };
 
-/** Primary browse experience — channel-style video grid */
 export const videos: VideoItem[] = [
   {
     id: "vid-aeri",
@@ -88,6 +86,202 @@ export const videos: VideoItem[] = [
   },
 ];
 
+export type PlaylistItem = {
+  id: string;
+  title: string;
+  meta: string;
+  thumb: string;
+  href: string;
+  accent: "magenta" | "cyan" | "purple" | "amber";
+};
+
+/** YouTube playlists — thumbnails from channel, same pattern as videos */
+export const playlists: PlaylistItem[] = [
+  {
+    id: "pl-fairy",
+    title: "Fairy Tales From Another Timeline™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/ldmO9oklcdo/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLSc-7eX8nhAE",
+    accent: "purple",
+  },
+  {
+    id: "pl-shorts",
+    title: "SHORTS — CGNN™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/Jr_NUtBOmFo/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLW0CIVNjFtlk",
+    accent: "cyan",
+  },
+  {
+    id: "pl-after-dark",
+    title: "AFTER DARK™ | The Late-Night Collection",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/LsFJ1uFdU00/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLPEpT55_L4cE",
+    accent: "magenta",
+  },
+  {
+    id: "pl-cosmos",
+    title: "THE COSMOS UNIVERSE™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/NIzAKCkOnYI/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLLsyog7B-YYo",
+    accent: "cyan",
+  },
+  {
+    id: "pl-dance",
+    title: "MYTHIC MIXTAPE DANCE CUTS™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/YVx9I0sHHxQ/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLUYROImLUpS8",
+    accent: "magenta",
+  },
+  {
+    id: "pl-dead-channels",
+    title: "DEAD CHANNELS™ — The Lost Broadcast Collection",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/SKOzi8X-xvg/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLfWmKm4dqHTU",
+    accent: "purple",
+  },
+  {
+    id: "pl-operator",
+    title: "THE OPERATOR™ — LAB 07",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/mtCSZDqfLqQ/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLe0y0kRHNG24",
+    accent: "cyan",
+  },
+  {
+    id: "pl-multiverse",
+    title: "THE MYTHIC MULTIVERSE™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/44cdyfGSBnM/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLJW3MWGgoaLg",
+    accent: "purple",
+  },
+  {
+    id: "pl-cartoons",
+    title: "CARTOONS & VIDEO GAMES THAT SHOULD NEVER EXIST™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/RC3dW4-Jsx4/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLMnPOuLIM3nk",
+    accent: "amber",
+  },
+  {
+    id: "pl-strange-devotion",
+    title: "STRANGE DEVOTION™ | A Sci-Fi Space Rock Opera",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/co0-ie3XcXM/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLXqMypnvjFGg",
+    accent: "magenta",
+  },
+  {
+    id: "pl-puppets",
+    title: "PUPPETS FROM ANOTHER TIMELINE™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/rLQbyClAWxI/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLUuYhl6s2Iec",
+    accent: "amber",
+  },
+  {
+    id: "pl-hair-metal",
+    title: "HAIR METAL FROM ANOTHER TIMELINE™ | Glam Rock & Power Ballads",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/Z6SYV5v_jp8/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLNJuVeKkq6Sc",
+    accent: "magenta",
+  },
+  {
+    id: "pl-radio",
+    title: "MYTHIC MIXTAPE RADIO™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/lOGwP1X8a14/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLEwDT9VQV0Fs",
+    accent: "cyan",
+  },
+  {
+    id: "pl-cinema",
+    title: "MYTHIC MIXTAPE CINEMA™ — NOW SHOWING!",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/co0-ie3XcXM/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLCmIez-MaFEw",
+    accent: "purple",
+  },
+  {
+    id: "pl-robot-jams",
+    title: "ROBOT JAMS™",
+    meta: "Playlist",
+    thumb: "https://i.ytimg.com/vi/EpDDD3m43Ug/hqdefault.jpg",
+    href: "https://www.youtube.com/playlist?list=PLclCWm5Q1dEQ",
+    accent: "cyan",
+  },
+];
+
+export type GameItem = {
+  id: string;
+  title: string;
+  blurb: string;
+  meta: string;
+  /** Local art path or omit for coming-soon placeholder */
+  thumb?: string;
+  accent: "magenta" | "cyan" | "purple" | "amber";
+  href?: string;
+  featured?: boolean;
+  comingSoon?: boolean;
+};
+
+export const games: GameItem[] = [
+  {
+    id: "game-candyland",
+    title: "Candyland and Aliens",
+    blurb:
+      "Legendary consumable chaos — sweet worlds, stranger together. Sugar rush: always.",
+    meta: "Game",
+    thumb: "/games/candyland-aliens.jpg",
+    accent: "magenta",
+  },
+  {
+    id: "game-jack-static",
+    title: "Jack Static™ — Initiation Game",
+    blurb:
+      "Initiation into the static — neon nights, round shades, and the signal that won’t let go.",
+    meta: "Game",
+    thumb: "/games/jack-static.jpg",
+    accent: "purple",
+  },
+  {
+    id: "game-picture-this",
+    title: "Picture This! — An AI Story Roulette Game",
+    blurb:
+      "Image + your words = total mayhem. Visual Mad Libs™ from the PattyVERSE™.",
+    meta: "Game",
+    thumb: "/games/picture-this.jpg",
+    accent: "cyan",
+  },
+  {
+    id: "game-que-no",
+    title: "¡QUE NO!™ — The Spanglish Game",
+    blurb:
+      "Palabras, frases, cultura, modismos — y actitud. With Dr. Que No™.",
+    meta: "Game",
+    thumb: "/games/que-no.jpg",
+    accent: "amber",
+    featured: true,
+  },
+  {
+    id: "game-pattyverse",
+    title: "PattyVERSE™",
+    blurb:
+      "A larger interactive universe in the works. Foundation first — populate as assets are approved.",
+    meta: "Coming soon",
+    accent: "purple",
+    comingSoon: true,
+  },
+];
+
+/** @deprecated Prefer `games` + `playlists` — kept empty so old imports don’t break */
 export type PortfolioItem = {
   id: string;
   title: string;
@@ -104,110 +298,11 @@ export type PortfolioSection = {
   items: PortfolioItem[];
 };
 
-/** Secondary portfolio lanes — Games placeholders + YouTube playlists */
-export const sections: PortfolioSection[] = [
-  {
-    id: "playlists",
-    title: "Playlists",
-    intro: "Open a Mythic Mixtape Studios™ series on YouTube.",
-    accent: "cyan",
-    items: [
-      {
-        id: "pl-fairy",
-        title: "Fairy Tales From Another Timeline™",
-        blurb: "Storybook sci-fi cuts from across the catalog.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLSc-7eX8nhAE",
-      },
-      {
-        id: "pl-shorts",
-        title: "SHORTS — CGNN™",
-        blurb: "Quick neon hits and channel shorts.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLW0CIVNjFtlk",
-      },
-      {
-        id: "pl-after-dark",
-        title: "AFTER DARK™ | The Late-Night Collection",
-        blurb: "After-hours pulse for empty halls and blue light.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLPEpT55_L4cE",
-      },
-      {
-        id: "pl-cosmos",
-        title: "THE COSMOS UNIVERSE™",
-        blurb: "Space-signal lore and cosmic transmissions.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLLsyog7B-YYo",
-      },
-      {
-        id: "pl-dance",
-        title: "MYTHIC MIXTAPE DANCE CUTS™",
-        blurb: "Floor-ready remix energy from the studio.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLUYROImLUpS8",
-      },
-      {
-        id: "pl-dead-channels",
-        title: "DEAD CHANNELS™ — The Lost Broadcast Collection",
-        blurb: "Found-signal broadcasts from dead TV worlds.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLfWmKm4dqHTU",
-      },
-      {
-        id: "pl-operator",
-        title: "THE OPERATOR™ — LAB 07",
-        blurb: "Lab notes from the Operator’s desk.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLe0y0kRHNG24",
-      },
-      {
-        id: "pl-multiverse",
-        title: "THE MYTHIC MULTIVERSE™",
-        blurb: "Characters, worlds, and multiverse lore.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLJW3MWGgoaLg",
-      },
-      {
-        id: "pl-cartoons",
-        title: "CARTOONS & VIDEO GAMES THAT SHOULD NEVER EXIST™",
-        blurb: "Impossible toons and game worlds that shouldn’t work — but do.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLMnPOuLIM3nk",
-      },
-      {
-        id: "pl-strange-devotion",
-        title: "STRANGE DEVOTION™ | A Sci-Fi Space Rock Opera",
-        blurb: "The space rock opera arc — devotion, glitch, and gold light.",
-        meta: "Playlist",
-        href: "https://www.youtube.com/playlist?list=PLXqMypnvjFGg",
-      },
-    ],
-  },
-  {
-    id: "games",
-    title: "Games",
-    intro: "Game projects coming soon — placeholders until builds are ready.",
-    accent: "magenta",
-    items: [
-      {
-        id: "game-1",
-        title: "Neon Drift Protocol",
-        blurb: "Placeholder — arcade runner concept with synthwave tracks.",
-        meta: "Coming soon",
-      },
-      {
-        id: "game-2",
-        title: "Cassette Crown",
-        blurb: "Placeholder — short narrative game tied to the mixtape mythos.",
-        meta: "Concept",
-      },
-      {
-        id: "game-3",
-        title: "Gridlock Ritual",
-        blurb: "Placeholder — twin-stick arena sketch. Swap for a real build link.",
-        meta: "Prototype",
-      },
-    ],
-  },
-];
+export const sections: PortfolioSection[] = [];
+
+export const navLinks = [
+  { href: "#videos", label: "Videos" },
+  { href: "#games", label: "Games" },
+  { href: "#playlists", label: "Playlists" },
+  { href: "#about", label: "About" },
+] as const;
