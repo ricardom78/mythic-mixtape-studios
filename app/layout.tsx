@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
 import "./globals.css";
 
@@ -17,7 +17,14 @@ const rajdhani = Rajdhani({
 export const metadata: Metadata = {
   title: "MythicMixtapeStudios — Portfolio",
   description:
-    "Mythic Mixtape Studios™ — games, videos, and songs with a synthwave pulse.",
+    "Mythic Mixtape Studios™ is an independent creative media and digital entertainment studio. Enter the world of imagination.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#050308",
 };
 
 export default function RootLayout({
