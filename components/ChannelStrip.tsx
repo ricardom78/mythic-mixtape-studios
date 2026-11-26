@@ -23,14 +23,21 @@ export function ChannelStrip() {
             {studio.displayName}
           </h2>
           <p className="mt-1 text-sm text-[var(--text-muted)]">
-            {studio.handle}
+            <a
+              href={studio.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--cyan)] no-underline hover:underline"
+            >
+              {studio.handle}
+            </a>
             <span className="mx-2 text-[var(--chrome-mid)]">·</span>
             {studio.stats.videos}
             <span className="mx-2 text-[var(--chrome-mid)]">·</span>
             {studio.stats.note}
           </p>
           <p className="mt-2 max-w-xl text-[0.95rem] leading-snug text-[var(--text-muted)]">
-            Welcome to the neon — videos first, then games and songs.
+            Welcome to the neon — click a video or playlist to watch on YouTube.
           </p>
         </div>
       </div>

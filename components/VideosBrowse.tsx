@@ -13,11 +13,18 @@ const accentWash: Record<VideoItem["accent"], string> = {
   amber: "from-[#2a1808] via-[#120c08] to-[#050308]",
 };
 
+function isExternal(href?: string) {
+  return Boolean(href && /^https?:\/\//i.test(href));
+}
+
 function VideoCard({ item }: { item: VideoItem }) {
+  const external = isExternal(item.href);
   return (
     <article className="group flex flex-col gap-3">
       <a
         href={item.href ?? "#videos"}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
         className="relative block aspect-video overflow-hidden rounded-xl outline-none ring-0 transition duration-300 focus-visible:ring-2 focus-visible:ring-[var(--cyan)]"
       >
         <div

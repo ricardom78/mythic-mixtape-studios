@@ -37,9 +37,12 @@ export function PortfolioSections() {
           </div>
 
           <ul className="flex flex-col gap-1">
-            {section.items.map((item) => (
-              <li key={item.id}>
-                <div className="item-row px-4 py-5">
+            {section.items.map((item) => {
+              const external = Boolean(
+                item.href && /^https?:\/\//i.test(item.href),
+              );
+              const body = (
+                <>
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-[var(--text)] sm:text-lg">
                       {item.title}
@@ -56,9 +59,26 @@ export function PortfolioSections() {
                   <p className="mt-2 max-w-2xl text-[0.95rem] leading-relaxed text-[var(--text-muted)]">
                     {item.blurb}
                   </p>
-                </div>
-              </li>
-            ))}
+                </>
+              );
+
+              return (
+                <li key={item.id}>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      className="item-row block px-4 py-5 no-underline transition hover:bg-[rgba(255,255,255,0.03)]"
+                    >
+                      {body}
+                    </a>
+                  ) : (
+                    <div className="item-row px-4 py-5">{body}</div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
       ))}
