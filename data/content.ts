@@ -250,6 +250,7 @@ export const games: GameItem[] = [
     meta: "Game",
     thumb: "/games/jack-static.jpg",
     accent: "purple",
+    featured: true,
   },
   {
     id: "game-picture-this",
