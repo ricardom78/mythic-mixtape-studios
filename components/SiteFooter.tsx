@@ -15,7 +15,20 @@ export function SiteFooter() {
             {studio.email}
           </a>
           <span className="hidden text-[var(--chrome-mid)] sm:inline">·</span>
-          <span>Merch coming later</span>
+          {studio.shopUrl ? (
+            <a
+              href={studio.shopUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--magenta)] no-underline hover:underline"
+            >
+              Shop
+            </a>
+          ) : (
+            <a href="#shop" className="text-[var(--magenta)] no-underline hover:underline">
+              Shop — coming soon
+            </a>
+          )}
         </p>
       </div>
     </footer>

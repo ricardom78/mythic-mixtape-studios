@@ -4,6 +4,7 @@ import { GamesBrowse } from "@/components/GamesBrowse";
 import { Hero } from "@/components/Hero";
 import { LibraryBrowse } from "@/components/LibraryBrowse";
 import { PlaylistsBrowse } from "@/components/PlaylistsBrowse";
+import { ShopBrowse } from "@/components/ShopBrowse";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
 import { VideosBrowse } from "@/components/VideosBrowse";
@@ -19,6 +20,7 @@ export default function Home() {
         <GamesBrowse />
         <PlaylistsBrowse />
         <LibraryBrowse />
+        <ShopBrowse />
         <About />
       </main>
       <SiteFooter />

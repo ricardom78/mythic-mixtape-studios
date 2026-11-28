@@ -18,11 +18,28 @@ export const studio = {
   email: "mythicmixtapestudios@gmail.com",
   logoSrc: "/channel-logo.png",
   youtubeUrl: "https://www.youtube.com/@MythicMixtapeStudios",
-  /** Future: Shopify merch store — link or embed when ready; keep portfolio on Vercel. */
+  /**
+   * Shopify storefront URL when ready (e.g. https://mythic-mixtape.myshopify.com).
+   * Leave undefined until the Online Store is live — Shop section shows Coming soon.
+   */
   shopUrl: undefined as string | undefined,
+  shopLabel: "Open shop",
   stats: { videos: "YouTube", note: "Watch on channel" },
   ctaPrimary: { label: "Browse videos", href: "#videos" },
   ctaSecondary: { label: "Games", href: "#games" },
+};
+
+export const shop = {
+  title: "Shop",
+  intro:
+    "Merchandise and digital products from Mythic Mixtape Studios™ — powered by Shopify when the store is ready.",
+  comingSoon:
+    "Store setup is in progress. Products and checkout will open here as soon as the Shopify storefront is published.",
+  bullets: [
+    "Studio merch & apparel",
+    "Digital publications & downloads",
+    "Secure checkout via Shopify",
+  ],
 };
 
 export type VideoItem = {
@@ -395,5 +412,6 @@ export const navLinks = [
   { href: "#games", label: "Games" },
   { href: "#playlists", label: "Playlists" },
   { href: "#library", label: "Library" },
+  { href: "#shop", label: "Shop" },
   { href: "#about", label: "About" },
 ] as const;
